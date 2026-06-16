@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uhr konfigurieren</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page page-index">
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">GitHub Pages Uhr</p>
+      <h1>Uhr konfigurieren</h1>
+      <p class="lead">Wähle Hintergrund und starte dann die Live-Uhr für Deutschland.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Hintergrund</h2>
+      <p class="muted">Du kannst eine feste Farbe oder ein Bild verwenden. Bilder werden lokal im Browser gespeichert.</p>
+
+      <div class="option-row">
+        <label class="choice">
+          <input type="radio" name="bgMode" value="preset" checked />
+          <span>Voreingestellte Farbe</span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="bgMode" value="image" />
+          <span>Bild (Upload)</span>
+        </label>
+      </div>
+
+      <div id="presetArea" class="config-block">
+        <div class="preset-grid">
+          <button type="button" class="color-swatch active" data-color="255,0,0" style="--swatch: rgb(255,0,0)">Rot</button>
+          <button type="button" class="color-swatch" data-color="0,128,0" style="--swatch: rgb(0,128,0)">Grün</button>
+          <button type="button" class="color-swatch" data-color="0,0,255" style="--swatch: rgb(0,0,255)">Blau</button>
+          <button type="button" class="color-swatch" data-color="0,0,0" style="--swatch: rgb(0,0,0)">Schwarz</button>
+        </div>
+
+        <label class="field">
+          <span>Eigene RGB-Farbe</span>
+          <div class="rgb-row">
+            <input type="number" id="rInput" min="0" max="255" value="255" />
+            <input type="number" id="gInput" min="0" max="255" value="0" />
+            <input type="number" id="bInput" min="0" max="255" value="0" />
+          </div>
+        </label>
+      </div>
+
+      <div id="imageArea" class="config-block hidden">
+        <label class="field">
+          <span>Bild hochladen</span>
+          <input type="file" id="imageInput" accept="image/*" />
+        </label>
+        <div class="image-preview-wrap">
+          <img id="imagePreview" alt="Bildvorschau" class="image-preview hidden" />
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="goClockBtn" class="primary-btn">Zur Uhr</button>
+        <button id="resetBtn" class="secondary-btn" type="button">Zurücksetzen</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="impressum.html">Impressum</a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
